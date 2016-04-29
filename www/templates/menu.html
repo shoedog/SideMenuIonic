@@ -1,22 +1,23 @@
-<ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
+<ion-side-menus enable-menu-with-back-views="false"> <!-- Container for SideMenu application -->
+  <ion-side-menu-content> <!-- Specify main content area or visible part of app-->
+    <ion-nav-bar class="bar-stable"> <!-- Nav buttons for main content area -->
       <ion-nav-back-button>
       </ion-nav-back-button>
 
-      <ion-nav-buttons side="left">
+      <ion-nav-buttons side="left"> <!-- When button is tapped, left side menu is triggered -->
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
+    <ion-nav-view name="menuContent"> <!-- Placeholder for content injection: menuContent -->
+    </ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
+  <ion-side-menu side="left"> <!-- Specify Side Menus: can specify multiple left/right/both -->
+    <ion-header-bar class="bar-stable"> <!-- Header for Side Menu -->
       <h1 class="title">Left</h1>
     </ion-header-bar>
-    <ion-content>
+    <ion-content>   <!-- Content of Side Menu below header -->
       <ion-list>
         <ion-item menu-close ng-click="login()">
           Login
@@ -27,7 +28,7 @@
         <ion-item menu-close href="#/app/browse">
           Browse
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+        <ion-item menu-close href="#/app/sites">
           Playlists
         </ion-item>
       </ion-list>
