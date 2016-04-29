@@ -1,0 +1,22 @@
+[
+	{
+		"id" : "1",
+		"name" : "Denver Botanic Gardens",
+		"description" : "24 Acres with North America's largest collection of plants from cold temparate climates around the world. 50 diverse gardens include sections of Western Gardens with drought-tolerant Western and Mediterranean plants, Japanese, asian, and tropical inspired gardens, Ornamental gardens, Water Gardens, Shady Gardens for rest and contemplation, and a Children's Garden for exploration"
+		},
+	{
+		"id" : "2",
+		"name" : "Mount Evans",
+		"description" : "Featuring the highest paved road in North America, and the highest summit of the Chicago Peaks in the front range, Mount Evans can be seen from over 100 miles to the east."
+		},
+	{
+		"id" : "3",
+		"name" : "Coors Field",
+		"description" : "The highest park in the Major's at 5,200 feet, the park has the largest outfield in baseball today and consistently has the most home runs, doubles, and triples. It also has its own micro-brewery and a 38,000 square foot rooftop patio in upper right field."
+		},
+	{
+		"id" : "4",
+		"name" : "Union Station",
+		"description" : "Built in 1881 and renovated/reopened in 2014 with a hotel, restaurants, retailers, and a train hall this building is centrally located and a close walk to many restaurants, bars, microbrewerys, and sites. It also provides access via literail to many areas of Denver."
+		},
+]
