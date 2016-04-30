@@ -19,7 +19,6 @@ angular.module('starter.controllers', [])
     $scope.modal = modal;
   });
 
-  
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
@@ -42,12 +41,16 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('SitesCtrl', function($scope, $http, $ionicPopover, $ionicModal) {
+.controller('SitesCtrl', function($scope, $state, $http, $ionicPopover, $ionicModal) {
   $scope.sites = [ ];
   $http.get('/sites.json')
     .then(function (response) {
       $scope.sites = response.data;
     });
+
+  $scope.moreInfo = function (index) {
+      $state.go('app.sites.site', {index});
+  };
 
   $ionicPopover.fromTemplateUrl('templates/popover.html', {
     scope: $scope
@@ -87,5 +90,10 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('SiteCtrl', function($scope, $routeParams, $http, $stateParams, $ionicHistory) {
+  $scope.siteId = $routeParams.siteId
+
+  $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  };
 });

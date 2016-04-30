@@ -4,8 +4,8 @@
 	</ion-nav-buttons>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="site in sites">
-        {{site.name}}
+      <ion-item ng-repeat="site in sites track by $index">
+        <a class="button icon icon-right ion-chevron-right" ng-click="moreInfo($index)">{{site.name}}</a>
       </ion-item>
     </ion-list>
   </ion-content>
