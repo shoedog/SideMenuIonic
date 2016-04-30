@@ -19,6 +19,36 @@ angular.module('starter.controllers', [])
     $scope.modal = modal;
   });
 
+  
+  // Triggered in the login modal to close it
+  $scope.closeLogin = function() {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.login = function() {
+    $scope.modal.show();
+  };
+
+  // Perform the login action when the user submits the login form
+  $scope.doLogin = function() {
+    console.log('Doing login', $scope.loginData);
+
+    // Simulate a login delay. Remove this and replace with your login
+    // code if using a login system
+    $timeout(function() {
+      $scope.closeLogin();
+    }, 1000);
+  };
+})
+
+.controller('SitesCtrl', function($scope, $http, $ionicPopover, $ionicModal) {
+  $scope.sites = [ ];
+  $http.get('/sites.json')
+    .then(function (response) {
+      $scope.sites = response.data;
+    });
+
   $ionicPopover.fromTemplateUrl('templates/popover.html', {
     scope: $scope
   }).then(function(popover) {
@@ -44,35 +74,17 @@ angular.module('starter.controllers', [])
     // Execute action
   });
 
-  
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
     $scope.modal.show();
   };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+  $scope.closeModal = function() {
+      $scope.modal.hide();
   };
-})
-
-.controller('SitesCtrl', function($scope, $http, $ionicPopover) {
-  $scope.sites = [ ];
-  $http.get('/sites.json')
-    .then(function (response) {
-      $scope.sites = response.data;
-    });
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
